@@ -60,12 +60,13 @@ int main()
 		std::cout << "3.Order Dishes 点餐" << endl;
 		std::cout << "4.Check out 结算" << endl;
 		std::cout << "5.Statistic 统计" << endl;
+		std::cout << "6.Exit 退出" << endl;
 		std::cout << "Please choose(key in a number) 请输入您的选项" << endl;
 
 		string input;
 		cin >> input;
 		RegUtil req;
-		int choice = RegUtil::returnIntIfValid(input, 1, 5);
+		int choice = RegUtil::returnIntIfValid(input, 1, 6);
 		if (choice == 1) {
 			menu = initMenu(menu);
 		}
@@ -80,6 +81,9 @@ int main()
 		}
 		else if (choice == 5) {
 			statistic(totalOrders, &menu);
+		}
+		else if (choice == 6) {
+			return 0;
 		}
 	}
 	return 0;
